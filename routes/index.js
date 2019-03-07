@@ -9,11 +9,11 @@ exports.view = function(req, res){
 		"id": "lab-9",
 		"title": "Debugging 101",
 		"date": "March 7",
-		"image": "debug.png"
+		"image": "debug.png",
 	}];
-
-  	labs.push(todaysLab);
+  	labs.push.apply(labs,todaysLab);
   }
+  console.log(labs);
 
   res.render('index', {
 	'labs': labs
